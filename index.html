@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+
+    <div id="main">
+     <div id="input" align="center">
+        <h2>Enter Your Name</h2>
+        <input type="text" id="studentName" placeholder="Student Name">
+        <br>
+        <input style="margin-top: 10px;" type="button" onclick="result()" value="Check Your Result">
+        <p id="output"></p>
+
+      </div>
+
+    </div>
+    
+
+    <script>
+ function result() {
+    var students= {
+    
+        DAVID : {
+            Mark : "70",
+            GPA : "A"
+        },
+
+        SMITH : {
+            Mark : "80",
+            GPA : "A+"
+        },
+
+        JOHN : {
+            Mark : "60",
+            GPA : "B"
+        }
+    }
+
+    var studentName=document.getElementById('studentName').value;
+    var input=studentName.toUpperCase();
+    var definition=students[input];
+    var output=document.getElementById("output");
+
+    if (definition==undefined){
+        output.innerHTML=`Data Not Found`;
+    }
+
+    else {
+        output.innerHTML=`Passed </br> ${definition.studentName} </br> Grade Point : ${definition.GPA}`;
+    }
+ }
+
+
+    </script>
+</body>
+</html>
